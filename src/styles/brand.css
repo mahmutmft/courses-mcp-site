@@ -62,3 +62,56 @@ site-search dialog::backdrop {
     }
   }
 }
+
+header.header .social-icons:has(.project-links)::after {
+  display: none;
+}
+
+@media (max-width: 49.999rem) {
+  header.header .right-group:has(.project-links) {
+    display: flex;
+  }
+}
+
+#starlight__search:empty {
+  min-block-size: 3rem;
+  border-radius: 0.5rem;
+  background: var(--sl-color-bg-inline-code);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #starlight__search:empty {
+    animation: search-loading 1.2s ease-in-out infinite alternate;
+  }
+
+  @keyframes search-loading {
+    from { opacity: 0.55; }
+    to { opacity: 1; }
+  }
+}
+
+header.header .site-title img {
+  height: 1.75rem;
+}
+
+header.header .site-title {
+  gap: 0.5rem;
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: normal;
+}
+
+@media (max-width: 23rem) {
+  header.header .site-title {
+    font-size: 0.8125rem;
+  }
+
+  header.header .site-title img {
+    height: 1.375rem;
+  }
+}
+
+header.header {
+  font-family: "Geist Variable", system-ui, sans-serif;
+}

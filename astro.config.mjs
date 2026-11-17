@@ -8,10 +8,11 @@ export default defineConfig({
       components: {
         SiteTitle: './src/components/SiteTitle.astro',
         ThemeProvider: './src/components/DarkThemeOnly.astro',
+        SocialIcons: './src/components/ProjectLinks.astro',
         ThemeSelect: './src/components/DarkThemeOnly.astro',
       },
-      customCss: ['./src/styles/brand.css'],
-      logo: { src: './src/assets/courses-mcp-logo.webp', replacesTitle: true, alt: 'courses-mcp' },
+      customCss: ['@fontsource-variable/geist', './src/styles/brand.css'],
+      logo: { src: './src/assets/courses-mcp-logo.webp' },
     }),
   ],
 });
