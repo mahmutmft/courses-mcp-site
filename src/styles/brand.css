@@ -33,3 +33,13 @@ header.header > .header {
   max-inline-size: 86rem;
   margin-inline: auto;
 }
+
+@media (min-width: 50rem) {
+  header.header > .header {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 22rem) minmax(0, 1fr);
+  }
+
+  header.header > .header > .right-group {
+    justify-self: end;
+  }
+}
