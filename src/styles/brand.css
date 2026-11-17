@@ -62,3 +62,13 @@ site-search dialog::backdrop {
     }
   }
 }
+
+header.header .social-icons:has(.project-links)::after {
+  display: none;
+}
+
+@media (max-width: 49.999rem) {
+  header.header .right-group:has(.project-links) {
+    display: flex;
+  }
+}
