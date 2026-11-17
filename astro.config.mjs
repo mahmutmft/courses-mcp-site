@@ -5,6 +5,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'courses-mcp',
+      logo: { src: './src/assets/courses-mcp-logo.webp' },
     }),
   ],
 });
