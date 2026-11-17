@@ -89,3 +89,7 @@ header.header .social-icons:has(.project-links)::after {
     to { opacity: 1; }
   }
 }
+
+header.header .site-title img {
+  height: 1.75rem;
+}
