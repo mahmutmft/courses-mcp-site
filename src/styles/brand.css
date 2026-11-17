@@ -206,7 +206,7 @@ starlight-toc a[aria-current='true']::before {
   }
 
   .main-frame .right-sidebar-container {
-    flex: 0 0 12rem;
+    flex: 0 0 13.5rem;
   }
 
   .main-frame .right-sidebar {
