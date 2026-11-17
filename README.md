@@ -1,5 +1,7 @@
 # courses-mcp-site
 
+![Courses MCP — materials, deadlines, and course search for FINKI students](docs/assets/courses-mcp-banner.png)
+
 Documentation website for [courses-mcp](https://github.com/mahmutmft/courses-mcp), an MCP server for accessing course materials. The site is built with Astro and Starlight, with Pagefind for search.
 
 [Open the documentation](https://courses-mcp.mahmutmft.dev)
