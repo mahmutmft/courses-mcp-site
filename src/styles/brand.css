@@ -1,8 +1,5 @@
 @layer starlight.theme {
   :root {
-    --sl-color-bg: #101012;
-    --sl-color-bg-nav: #101012;
-    --sl-color-bg-sidebar: #101012;
     --sl-color-bg-inline-code: #242427;
     --sl-color-text: #eeeeef;
     --sl-color-accent-low: #292942;
@@ -20,6 +17,12 @@
     --sl-color-accent: #414aa0;
     --sl-color-accent-high: #292d70;
   }
+}
+
+:root[data-theme='dark'] {
+  --sl-color-bg: #0e0e10;
+  --sl-color-bg-nav: var(--sl-color-bg);
+  --sl-color-bg-sidebar: var(--sl-color-bg);
 }
 
 :root[data-theme='dark'] :is(.site-title img, .hero > img) {
