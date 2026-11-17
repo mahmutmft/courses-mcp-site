@@ -197,3 +197,22 @@ starlight-toc a[aria-current='true']::before {
   inline-size: 1px;
   background: #e1e1e5;
 }
+
+@media (min-width: 72rem) {
+  :root[data-has-sidebar][data-has-toc] .main-pane {
+    flex: 1 1 0;
+    min-inline-size: 0;
+    --sl-content-margin-inline: auto;
+  }
+
+  .main-frame .right-sidebar-container {
+    flex: 0 0 14rem;
+  }
+
+  .main-frame .right-sidebar {
+    position: sticky;
+    top: var(--sl-nav-height);
+    height: calc(100vh - var(--sl-nav-height));
+    padding-top: 0;
+  }
+}
