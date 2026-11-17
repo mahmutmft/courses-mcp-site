@@ -6,7 +6,7 @@ export default defineConfig({
     starlight({
       title: 'courses-mcp',
       customCss: ['./src/styles/brand.css'],
-      logo: { src: './src/assets/courses-mcp-logo.webp' },
+      logo: { src: './src/assets/courses-mcp-logo.webp', replacesTitle: true, alt: 'courses-mcp' },
     }),
   ],
 });
