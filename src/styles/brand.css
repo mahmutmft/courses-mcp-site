@@ -172,3 +172,28 @@ header.header {
     border-inline-end: 0;
   }
 }
+
+starlight-toc nav > ul {
+  margin-block-start: 0.5rem;
+  border-inline-start: 1px solid #2e2e32;
+}
+
+starlight-toc a {
+  position: relative;
+  --pad-inline: 0.875rem;
+  color: #a9a9b0;
+}
+
+starlight-toc a[aria-current='true'] {
+  color: #f5f5f5;
+  font-weight: 600;
+}
+
+starlight-toc a[aria-current='true']::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: -1px;
+  inline-size: 1px;
+  background: #e1e1e5;
+}
