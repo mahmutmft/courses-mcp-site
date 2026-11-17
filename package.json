@@ -1,0 +1,23 @@
+{
+  "name": "courses-mcp-site",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahmutmft/courses-mcp-site.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mahmutmft/courses-mcp-site/issues"
+  },
+  "homepage": "https://github.com/mahmutmft/courses-mcp-site#readme",
+  "private": true,
+  "dependencies": {
+    "@astrojs/starlight": "^0.43.1",
+    "astro": "^7.4.12",
+    "sharp": "^0.35.5"
+  }
+}
