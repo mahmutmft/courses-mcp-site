@@ -67,12 +67,6 @@ header.header .social-icons:has(.project-links)::after {
   display: none;
 }
 
-@media (max-width: 49.999rem) {
-  header.header .right-group:has(.project-links) {
-    display: flex;
-  }
-}
-
 #starlight__search:empty {
   min-block-size: 3rem;
   border-radius: 0.5rem;
@@ -226,5 +220,21 @@ starlight-toc a[aria-current='true']::before {
 
   starlight-toc a {
     padding-inline-end: 0;
+  }
+}
+
+@media (max-width: 49.999rem) {
+  #starlight__sidebar {
+    background: var(--sl-color-bg-sidebar);
+  }
+
+  #starlight__sidebar .project-links span {
+    display: inline;
+  }
+}
+
+@media (max-width: 24rem) {
+  header.header .site-identity .version {
+    display: none;
   }
 }
