@@ -1,19 +1,29 @@
-# ApexiumDev Engineering Template
+# courses-mcp-site
 
-A language-agnostic GitHub repository template for structured issues, disciplined pull requests and automated review checks.
+Documentation website for [courses-mcp](https://github.com/mahmutmft/courses-mcp), an MCP server for accessing course materials. The site is built with Astro and Starlight, with Pagefind for search.
 
-## Start here
-1. Select **Use this template** on GitHub after publishing this repository as a template.
-2. Replace the placeholders in `docs/PROJECT_CONTEXT.md`.
-3. Configure issue labels, project board, collaborators and branch protection manually (repository settings do **not** carry over from a template).
-4. Adapt `.github/workflows/ci.yml` for the project's actual build/lint/test commands; never mark an unconfigured check as successful.
-5. Configure your Codex GitHub connection/MCP separately, with minimum required permissions.
+[Open the documentation](https://courses-mcp.mahmutmft.dev)
 
-## Workflow
-Issue → branch (`feat/123-short-name`, `fix/123-short-name`) → PR → tests / code review → merge.
+## Local development
 
-## Limitations
-- `AGENTS.md` guides an AI agent; it does not enforce a GitHub policy.
-- GitHub Free protects public repositories, not private repositories, with the same enforced branch-protection controls.
-- There is no guarantee automated review finds every bug or vulnerability.
-- Template repositories copy files, not all repository settings, issue labels or project boards.
+Use Node.js 24 and npm. From the repository root, run:
+
+```sh
+npm ci
+npm run dev
+```
+
+Open [localhost:4321](http://localhost:4321/). Documentation pages and the release blog live in [src/content/docs](src/content/docs/).
+
+To build and preview the production site with search enabled:
+
+```sh
+npm run build
+npm run preview
+```
+
+## Contributing
+
+Start with an [issue](https://github.com/mahmutmft/courses-mcp-site/issues) and create a branch from `master`. Keep commits focused and include the issue number, for example `docs: clarify local setup (#21)`. Open a pull request linked to the issue and list the checks you ran. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+GitHub Actions deploys changes merged into `master` to GitHub Pages.
