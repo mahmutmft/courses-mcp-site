@@ -216,3 +216,10 @@ starlight-toc a[aria-current='true']::before {
     padding-top: 0;
   }
 }
+
+@media (min-width: 72rem) {
+  #starlight__on-this-page {
+    text-align: end;
+    margin-inline-end: calc(0.375rem - var(--sl-nav-pad-x));
+  }
+}
