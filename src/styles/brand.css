@@ -6,17 +6,6 @@
     --sl-color-accent: #b9bdff;
     --sl-color-accent-high: #e9eaff;
   }
-
-  :root[data-theme='light'] {
-    --sl-color-bg: #fff;
-    --sl-color-bg-nav: #fff;
-    --sl-color-bg-sidebar: #fff;
-    --sl-color-bg-inline-code: #f0f0f2;
-    --sl-color-text: #29292e;
-    --sl-color-accent-low: #e9eaff;
-    --sl-color-accent: #414aa0;
-    --sl-color-accent-high: #292d70;
-  }
 }
 
 :root[data-theme='dark'] {
@@ -27,4 +16,49 @@
 
 :root[data-theme='dark'] :is(.site-title img, .hero > img) {
   filter: grayscale(1) brightness(0) invert(0.94);
+}
+
+header.header > .header {
+  max-inline-size: 86rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 50rem) {
+  header.header > .header {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 22rem) minmax(0, 1fr);
+  }
+
+  header.header > .header > .right-group {
+    justify-self: end;
+  }
+}
+
+site-search dialog {
+  background-color: color-mix(in srgb, var(--sl-color-bg) 76%, transparent);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+site-search dialog::backdrop {
+  background-color: rgb(0 0 0 / 18%);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  site-search dialog[open] {
+    animation: search-dialog-enter 160ms ease-out both;
+  }
+
+  @keyframes search-dialog-enter {
+    from {
+      opacity: 0;
+      translate: 0 -0.375rem;
+    }
+
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
 }
