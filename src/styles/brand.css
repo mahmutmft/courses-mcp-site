@@ -72,3 +72,20 @@ header.header .social-icons:has(.project-links)::after {
     display: flex;
   }
 }
+
+#starlight__search:empty {
+  min-block-size: 3rem;
+  border-radius: 0.5rem;
+  background: var(--sl-color-bg-inline-code);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #starlight__search:empty {
+    animation: search-loading 1.2s ease-in-out infinite alternate;
+  }
+
+  @keyframes search-loading {
+    from { opacity: 0.55; }
+    to { opacity: 1; }
+  }
+}
