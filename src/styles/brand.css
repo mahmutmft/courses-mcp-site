@@ -6,17 +6,6 @@
     --sl-color-accent: #b9bdff;
     --sl-color-accent-high: #e9eaff;
   }
-
-  :root[data-theme='light'] {
-    --sl-color-bg: #fff;
-    --sl-color-bg-nav: #fff;
-    --sl-color-bg-sidebar: #fff;
-    --sl-color-bg-inline-code: #f0f0f2;
-    --sl-color-text: #29292e;
-    --sl-color-accent-low: #e9eaff;
-    --sl-color-accent: #414aa0;
-    --sl-color-accent-high: #292d70;
-  }
 }
 
 :root[data-theme='dark'] {
