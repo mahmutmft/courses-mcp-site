@@ -93,3 +93,22 @@ header.header .social-icons:has(.project-links)::after {
 header.header .site-title img {
   height: 1.75rem;
 }
+
+header.header .site-title {
+  gap: 0.5rem;
+  color: #fff;
+  font-family: "Geist Variable", system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+@media (max-width: 23rem) {
+  header.header .site-title {
+    font-size: 0.8125rem;
+  }
+
+  header.header .site-title img {
+    height: 1.375rem;
+  }
+}
