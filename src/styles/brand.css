@@ -28,3 +28,8 @@
 :root[data-theme='dark'] :is(.site-title img, .hero > img) {
   filter: grayscale(1) brightness(0) invert(0.94);
 }
+
+header.header > .header {
+  max-inline-size: 86rem;
+  margin-inline: auto;
+}
