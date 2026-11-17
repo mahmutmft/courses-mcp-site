@@ -43,3 +43,15 @@ header.header > .header {
     justify-self: end;
   }
 }
+
+site-search dialog {
+  background-color: color-mix(in srgb, var(--sl-color-bg) 76%, transparent);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+site-search dialog::backdrop {
+  background-color: rgb(0 0 0 / 18%);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
