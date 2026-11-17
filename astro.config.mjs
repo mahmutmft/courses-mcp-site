@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
+  redirects: { '/docs/': '/' },
   integrations: [
     starlight({
       title: 'courses-mcp',
@@ -12,7 +13,7 @@ export default defineConfig({
         ThemeSelect: './src/components/DarkThemeOnly.astro',
       },
       sidebar: [
-        { label: 'Get started', items: [{ slug: 'docs', label: 'Overview' }] },
+        { label: 'Get started', items: [{ link: '/', label: 'Overview' }] },
       ],
       customCss: ['@fontsource-variable/geist', './src/styles/brand.css'],
       logo: { src: './src/assets/courses-mcp-logo.webp' },
