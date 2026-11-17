@@ -11,6 +11,9 @@ export default defineConfig({
         SocialIcons: './src/components/ProjectLinks.astro',
         ThemeSelect: './src/components/DarkThemeOnly.astro',
       },
+      sidebar: [
+        { label: 'Get started', items: [{ slug: 'docs', label: 'Overview' }] },
+      ],
       customCss: ['@fontsource-variable/geist', './src/styles/brand.css'],
       logo: { src: './src/assets/courses-mcp-logo.webp' },
     }),
