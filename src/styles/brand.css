@@ -1,0 +1,39 @@
+@layer starlight.theme {
+  :root {
+    --sl-color-bg: #101d35;
+    --sl-color-bg-nav: #152642;
+    --sl-color-bg-sidebar: #152642;
+    --sl-color-bg-inline-code: #223654;
+    --sl-color-text: #e7eefb;
+    --sl-color-accent-low: #233768;
+    --sl-color-accent: #a6b8ff;
+    --sl-color-accent-high: #dce4ff;
+  }
+
+  :root[data-theme='light'] {
+    --sl-color-bg: #f4f7ff;
+    --sl-color-bg-nav: #e9efff;
+    --sl-color-bg-sidebar: #e9efff;
+    --sl-color-bg-inline-code: #e0e8fa;
+    --sl-color-text: #283854;
+    --sl-color-accent-low: #dbe4ff;
+    --sl-color-accent: #334bb1;
+    --sl-color-accent-high: #243477;
+  }
+}
+
+.site-title img {
+  box-sizing: border-box;
+  width: auto;
+  padding: 0.25rem 0.45rem;
+  border-radius: 0.5rem;
+  background: #eef3ff;
+}
+
+.hero > img {
+  box-sizing: border-box;
+  padding: clamp(1rem, 4vw, 2.75rem);
+  border: 1px solid #cad8fa;
+  border-radius: 1.5rem;
+  background: #eef3ff;
+}
