@@ -218,8 +218,13 @@ starlight-toc a[aria-current='true']::before {
 }
 
 @media (min-width: 72rem) {
-  #starlight__on-this-page {
+  #starlight__on-this-page,
+  starlight-toc nav > ul {
     text-align: end;
     margin-inline-end: calc(0.375rem - var(--sl-nav-pad-x));
+  }
+
+  starlight-toc a {
+    padding-inline-end: 0;
   }
 }
