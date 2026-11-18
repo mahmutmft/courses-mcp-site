@@ -2,14 +2,14 @@
 const { toc } = Astro.locals.starlightRoute;
 ---
 {toc && (
-  <starlight-toc>
+  <courses-page-sections>
     <nav aria-labelledby="starlight__on-this-page">
       <h2 id="starlight__on-this-page">On this page</h2>
       <ul>
         {toc.items.map((item) => <li><a href={'#' + item.slug}>{item.text}</a></li>)}
       </ul>
     </nav>
-  </starlight-toc>
+  </courses-page-sections>
 )}
 
 <script>
@@ -69,7 +69,7 @@ const { toc } = Astro.locals.starlightRoute;
       else update();
     }
   }
-  customElements.define('starlight-toc', PageSections);
+  customElements.define('courses-page-sections', PageSections);
 </script>
 
 <style>
