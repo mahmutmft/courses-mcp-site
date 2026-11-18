@@ -574,3 +574,8 @@ starlight-toc a[aria-current='true']::before {
     transition: color 150ms ease, border-color 150ms ease;
   }
 }
+
+/* Allow even the final section to reach the navigation's reading position. */
+.main-pane:has(.sl-markdown-content) {
+  padding-block-end: calc(100svh - var(--sl-nav-height) - 5rem);
+}
