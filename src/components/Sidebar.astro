@@ -1,0 +1,21 @@
+---
+import Sidebar from '@astrojs/starlight/components/Sidebar.astro';
+import TableOfContents from '@astrojs/starlight/components/TableOfContents.astro';
+---
+
+<Sidebar />
+<div class="sidebar-sections">
+  <TableOfContents />
+</div>
+
+<style>
+  .sidebar-sections {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #29292c;
+  }
+
+  @media (max-width: 49.999rem) {
+    .sidebar-sections { display: none; }
+  }
+</style>
