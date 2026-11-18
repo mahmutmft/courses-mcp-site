@@ -575,9 +575,9 @@ starlight-toc a[aria-current='true']::before {
   }
 }
 
-/* Allow even the final section to reach the navigation's reading position. */
+/* Leave a small end margin after the article. */
 .main-pane:has(.sl-markdown-content) {
-  padding-block-end: calc(100svh - var(--sl-nav-height) - 5rem);
+  padding-block-end: 2rem;
 }
 
 html,
