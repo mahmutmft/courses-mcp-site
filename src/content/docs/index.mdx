@@ -1,52 +1,55 @@
 ---
-title: What is Courses MCP?
-description: Access your FINKI course materials through an MCP client.
+title: What is Courses MCP
+description: An introduction to Courses MCP.
 ---
 
 import ConnectionFlow from '../../components/ConnectionFlow.astro';
 
+Courses MCP is a locally hosted MCP server specifically designed for FINKI students. It is the connection between your AI agent and the Courses platform. With the help of an application that supports MCP, you can pose your queries to the agent, and the agent will use its software to find the necessary information from the courses you are enrolled in.
 
-Courses MCP connects your MCP client to the courses you can access on FINKI Moodle. Ask a question in your chat, and the client can use the server to find course information and read supported materials.
-
-It is built for FINKI students who want to work with course resources from an MCP-compatible application.
+I have designed Courses MCP with the intention of making our lives as students easier. Instead of logging in and searching through our courses each and every time, we could just ask our agent to provide us with the information we need.
 
 ## How it works
 
-MCP, the Model Context Protocol, lets a client application call tools provided by a server. Courses MCP provides tools for navigating your enrolled courses and retrieving information from Moodle.
+The Model Context Protocol, or MCP, allows a client application to invoke tools offered by the server. Courses MCP offers tools to help you navigate your course(s) and access data from Moodle.
 
 <ConnectionFlow />
 
-The server runs on your computer. Your MCP client starts it as a local process and communicates with it through standard input and output. On the first tool call, the server signs in through the faculty CAS login and keeps the session in memory until shutdown.
+The server is run locally by your computer. It is started by your MCP client as a local process and interacts with it via standard input/output. At the first invocation of the tool, the server logs into the faculty CAS and maintains the session until shutdown.
 
 ## What you can do
 
-- **Find your courses.** List enrolled courses and filter supported course labels by academic year or semester.
-- **Explore course materials.** Browse sections and resource links, then read supported Moodle pages and text-based PDFs.
-- **Search a course.** Find matching headings, activity names, summaries and descriptions.
-- **Check published coursework information.** Read assignment descriptions and published dates, supported announcements and available lab schedule evidence.
+Actions you can perform
 
-The tools report source links and coverage information. When a page cannot be read or only part of a resource is available, use those warnings to understand what the answer covers.
+<ul>
+  <li>{" Identify your courses. Enrolled Courses list will filter supported Course Labels on a year/semester basis."}</li>
+  <li>{" Explore course resources. Search through the sections and links. Read supported Moodle Pages and Text based PDF files."}</li>
+  <li>{" Search within a Course. Identify supported Course Headings, Activity Names and Summaries/Descriptions."}</li>
+  <li>{" Review published coursework content. Review assignment descriptions and published dates. Supported Announcements and lab schedule evidence can be considered."}</li>
+</ul>
+
+The tool provides the link of the sources and the coverage details. In case the page is not supported or only partial content is available in the resource, this message gives details about what the output contains.
 
 ## Questions to try
 
-Start by choosing a course, then ask a more specific question.
+{"First, select the course and then formulate a more particular question. "}
 
 <ul className="example-questions">
-  <li>“List my enrolled courses for the winter semester.”</li>
-  <li>“Find materials about recursion in this course.”</li>
-  <li>“Read this assignment and show its published due date.”</li>
+  <li>{"“What are my registered courses in the winter term?” "}</li>
+  <li>{"“What information can you provide on recursion in this course?” "}</li>
+  <li>{"“Review the assignment and give me the publishing date.” "}</li>
 </ul>
 
-These are example prompts. The response depends on your enrollment, the material published in Moodle and the tools your client chooses to call. Course search covers section and activity text. Reading a PDF is a separate step.
+Those are some examples. The answer will be determined by your course enrollment and the materials published in Moodle and the tools that your client will use to call you. The course search includes section and activity texts.
 
 ## Access and privacy
 
-You configure your faculty credentials locally. Enter them in the server configuration described in the project's setup instructions and keep them out of chats and shared files.
+You enter your faculty credentials locally. Use them in the server configuration for the project and don’t share them in chats and shared documents.
 
-Moodle access is read-only. Personal lab attendance and term preferences can be saved locally when you explicitly request a change. Course access follows your faculty account permissions.
+Moodle access is read-only. Personal attendance and preferences for the term can be saved locally if you ask for this explicitly. Access to courses is defined by your faculty account permissions.
 
 ## Project status
 
-Courses MCP is under active development. This documentation is a pre-release introduction. Supported tools and setup instructions may evolve before the first stable release.
+Courses MCP is under active development. This documentation is a pre-release version. The supported tools and setup instructions may change before the first release.
 
-For current installation instructions and tool details, visit the [Courses MCP repository](https://github.com/mahmutmft/courses-mcp). Release announcements will appear in the [Blog](/blog/).
+For current installation instructions and tool description, see the Courses MCP repository. Announcements about releases will be posted on the Blog.
