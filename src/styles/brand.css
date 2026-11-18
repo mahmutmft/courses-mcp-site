@@ -372,10 +372,42 @@ starlight-toc a[aria-current='true']::before {
   }
 }
 .sl-markdown-content .example-questions {
+  display: grid;
+  gap: 0.75rem;
   list-style: none;
-  padding-inline-start: 0.875rem;
+  padding-inline-start: 0.75rem;
 }
 
 .sl-markdown-content .example-questions li {
-  margin-block: 0.625rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #2d2d2f;
+  border-radius: 0.375rem;
+  background: #1d1d1f;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.example-questions li::before {
+  content: '';
+  flex: 0 0 0.875rem;
+  height: 0.875rem;
+  background: #8ba9e8;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 7 5 5-5 5m8 0h6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+@media (hover: hover) {
+  .example-questions li:hover {
+    border-color: #45454c;
+    background: #222225;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .example-questions li {
+    transition: background-color 150ms ease, border-color 150ms ease;
+  }
 }
