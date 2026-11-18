@@ -1,0 +1,78 @@
+---
+const { toc } = Astro.locals.starlightRoute;
+---
+{toc && (
+  <starlight-toc>
+    <nav aria-labelledby="starlight__on-this-page">
+      <h2 id="starlight__on-this-page">On this page</h2>
+      <ul>
+        {toc.items.map((item) => <li><a href={'#' + item.slug}>{item.text}</a></li>)}
+      </ul>
+    </nav>
+  </starlight-toc>
+)}
+
+<script>
+  class PageSections extends HTMLElement {
+    connectedCallback() {
+      const links = [...this.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')];
+      const entries = links.flatMap((link) => {
+        const heading = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+        return heading ? [{ link, heading }] : [];
+      });
+      let clickedLink: HTMLAnchorElement | undefined;
+      let scheduled = false;
+
+      const mark = (link: HTMLAnchorElement) => {
+        links.forEach((item) => {
+          if (item === link) item.setAttribute('aria-current', 'true');
+          else item.removeAttribute('aria-current');
+        });
+      };
+
+      const update = () => {
+        scheduled = false;
+        if (clickedLink) return;
+        const offset = (document.querySelector('header')?.getBoundingClientRect().height ?? 64) + 48;
+        const reachedEnd = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
+        const current = reachedEnd
+          ? entries.at(-1)
+          : entries.filter(({ heading }) => heading.getBoundingClientRect().top <= offset).at(-1) ?? entries[0];
+        if (current) mark(current.link);
+      };
+
+      const schedule = () => {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(update);
+      };
+
+      // Keep the clicked section selected while native anchor scrolling completes.
+      this.addEventListener('click', (event) => {
+        const link = event.target instanceof Element ? event.target.closest('a') : null;
+        if (link instanceof HTMLAnchorElement && links.includes(link)) {
+          clickedLink = link;
+          mark(link);
+        }
+      });
+      const resume = () => { clickedLink = undefined; schedule(); };
+      window.addEventListener('wheel', resume, { passive: true });
+      window.addEventListener('touchstart', resume, { passive: true });
+      window.addEventListener('pointerdown', resume, { passive: true });
+      window.addEventListener('keydown', (event) => {
+        if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)) resume();
+      });
+      window.addEventListener('scroll', schedule, { passive: true });
+      window.addEventListener('resize', schedule);
+      const initial = links.find((link) => link.hash === location.hash);
+      if (initial) { clickedLink = initial; mark(initial); }
+      else update();
+    }
+  }
+  customElements.define('starlight-toc', PageSections);
+</script>
+
+<style>
+  ul { list-style: none; padding: 0; }
+  a { display: block; text-decoration: none; }
+</style>
