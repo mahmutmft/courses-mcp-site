@@ -367,7 +367,7 @@ starlight-toc a[aria-current='true']::before {
 }
 @media (min-width: 50rem) {
   :root {
-    --sl-sidebar-width: 16rem;
+    --sl-sidebar-width: 19rem;
     --sl-content-width: 52rem;
   }
 }
