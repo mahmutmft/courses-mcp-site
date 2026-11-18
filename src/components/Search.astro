@@ -1,0 +1,18 @@
+---
+import Search from '@astrojs/starlight/components/Search.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<div class="soft-search">
+  <Search />
+  <nav class="search-shortcuts" aria-label="Quick navigation">
+    <a href={base}>Overview <span aria-hidden="true">↗</span></a>
+    <a href={base + 'blog/'}>Release notes <span aria-hidden="true">↗</span></a>
+  </nav>
+</div>
+
+<script>
+  const shortcuts = document.querySelector('.search-shortcuts');
+  const frame = document.querySelector('.soft-search .dialog-frame');
+  if (shortcuts && frame) frame.append(shortcuts);
+</script>

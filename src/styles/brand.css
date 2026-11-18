@@ -238,3 +238,76 @@ starlight-toc a[aria-current='true']::before {
     display: none;
   }
 }
+
+.soft-search {
+  width: 100%;
+}
+
+.soft-search dialog {
+  width: min(36rem, calc(100% - 2rem));
+  height: max-content;
+  min-height: 0;
+  max-height: calc(100dvh - 7rem);
+  margin: 4.5rem auto auto;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 1.25rem;
+  background: rgb(24 24 27 / 88%);
+  box-shadow: 0 20px 70px rgb(0 0 0 / 35%);
+}
+
+.soft-search .dialog-frame {
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+
+.soft-search dialog::backdrop {
+  background: rgb(0 0 0 / 25%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.soft-search .pagefind-ui__search-input {
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 0.875rem;
+  background: rgb(255 255 255 / 4%);
+  outline: none;
+}
+
+.soft-search .pagefind-ui__search-input:focus-visible {
+  border-color: #777990;
+  box-shadow: 0 0 0 2px rgb(185 189 255 / 10%);
+}
+
+.soft-search .search-shortcuts {
+  display: none;
+}
+
+.soft-search .dialog-frame:has(input:placeholder-shown) .search-shortcuts {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.search-shortcuts a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #c6c6cd;
+  text-decoration: none;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.search-shortcuts a:hover,
+.search-shortcuts a:focus-visible {
+  background: rgb(255 255 255 / 6%);
+  color: #fff;
+}
+
+@media (max-width: 49.999rem) {
+  .soft-search button[data-close-modal] {
+    position: static;
+    align-self: flex-end;
+    height: auto;
+  }
+}
