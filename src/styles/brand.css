@@ -371,26 +371,3 @@ starlight-toc a[aria-current='true']::before {
     --sl-content-width: 52rem;
   }
 }
-@media (min-width: 50rem) {
-  :root {
-    --sl-sidebar-width: 18rem;
-  }
-
-  .main-frame .right-sidebar-container {
-    display: none;
-  }
-
-  :root[data-has-sidebar][data-has-toc] .main-pane {
-    width: 100%;
-  }
-
-  #starlight__sidebar starlight-toc nav > ul,
-  #starlight__sidebar #starlight__on-this-page {
-    text-align: start;
-    margin-inline-end: 0;
-  }
-
-  #starlight__sidebar starlight-toc a {
-    padding-inline-end: 0.5rem;
-  }
-}
