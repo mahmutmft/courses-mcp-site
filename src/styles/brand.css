@@ -609,3 +609,20 @@ site-search .dialog-frame {
 ::-webkit-scrollbar-button {
   display: none;
 }
+
+@media (max-width: 49.999rem) {
+  #starlight__sidebar .mobile-preferences {
+    align-items: center;
+    gap: 0.5rem;
+    padding-block: 0.75rem;
+  }
+
+  #starlight__sidebar .mobile-preferences > .social-icons {
+    padding-block: 0;
+  }
+
+  #starlight__sidebar .project-links a,
+  #starlight__sidebar .language-picker summary {
+    min-height: 2.75rem;
+  }
+}
