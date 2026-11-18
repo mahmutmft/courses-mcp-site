@@ -1,0 +1,55 @@
+---
+title: What is Courses MCP
+description: An introduction to Courses MCP.
+---
+
+import ConnectionFlow from '../../components/ConnectionFlow.astro';
+
+Courses MCP is a locally hosted MCP server specifically designed for FINKI students. It is the connection between your AI agent and the Courses platform. With the help of an application that supports MCP, you can pose your queries to the agent, and the agent will use its software to find the necessary information from the courses you are enrolled in.
+
+I have designed Courses MCP with the intention of making our lives as students easier. Instead of logging in and searching through our courses each and every time, we could just ask our agent to provide us with the information we need.
+
+## How it works
+
+The Model Context Protocol, or MCP, allows a client application to invoke tools offered by the server. Courses MCP offers tools to help you navigate your course(s) and access data from Moodle.
+
+<ConnectionFlow />
+
+The server is run locally by your computer. It is started by your MCP client as a local process and interacts with it via standard input/output. At the first invocation of the tool, the server logs into the faculty CAS and maintains the session until shutdown.
+
+## What you can do
+
+Actions you can perform
+
+<ul>
+  <li>{" Identify your courses. Enrolled Courses list will filter supported Course Labels on a year/semester basis."}</li>
+  <li>{" Explore course resources. Search through the sections and links. Read supported Moodle Pages and Text based PDF files."}</li>
+  <li>{" Search within a Course. Identify supported Course Headings, Activity Names and Summaries/Descriptions."}</li>
+  <li>{" Review published coursework content. Review assignment descriptions and published dates. Supported Announcements and lab schedule evidence can be considered."}</li>
+</ul>
+
+The tool provides the link of the sources and the coverage details. In case the page is not supported or only partial content is available in the resource, this message gives details about what the output contains.
+
+## Questions to try
+
+{"First, select the course and then formulate a more particular question. "}
+
+<ul className="example-questions">
+  <li>{"“What are my registered courses in the winter term?” "}</li>
+  <li>{"“What information can you provide on recursion in this course?” "}</li>
+  <li>{"“Review the assignment and give me the publishing date.” "}</li>
+</ul>
+
+Those are some examples. The answer will be determined by your course enrollment and the materials published in Moodle and the tools that your client will use to call you. The course search includes section and activity texts.
+
+## Access and privacy
+
+You enter your faculty credentials locally. Use them in the server configuration for the project and don’t share them in chats and shared documents.
+
+Moodle access is read-only. Personal attendance and preferences for the term can be saved locally if you ask for this explicitly. Access to courses is defined by your faculty account permissions.
+
+## Project status
+
+Courses MCP is under active development. This documentation is a pre-release version. The supported tools and setup instructions may change before the first release.
+
+For current installation instructions and tool description, see the Courses MCP repository. Announcements about releases will be posted on the Blog.
