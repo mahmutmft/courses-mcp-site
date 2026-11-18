@@ -314,3 +314,41 @@ starlight-toc a[aria-current='true']::before {
     height: auto;
   }
 }
+
+:root {
+  --sl-font: "Geist Variable", system-ui, sans-serif;
+}
+
+.main-pane h1 {
+  font-size: clamp(1.875rem, 3vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.sl-markdown-content {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.sl-markdown-content :is(h2, h3) {
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.sl-markdown-content h2 {
+  font-size: 1.5rem;
+}
+
+.sl-markdown-content h3 {
+  font-size: 1.125rem;
+}
+
+.sl-markdown-content :is(p, ul, ol, blockquote) {
+  margin-block: 1.25rem;
+}
+
+.sl-markdown-content :is(h2, h3):not(:first-child) {
+  margin-block-start: 2.5rem;
+}
