@@ -328,7 +328,7 @@ starlight-toc a[aria-current='true']::before {
 
 .sl-markdown-content {
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .sl-markdown-content :is(h2, h3) {
@@ -346,9 +346,22 @@ starlight-toc a[aria-current='true']::before {
 }
 
 .sl-markdown-content :is(p, ul, ol, blockquote) {
-  margin-block: 1.25rem;
+  margin-block: 0.875rem;
 }
 
 .sl-markdown-content :is(h2, h3):not(:first-child) {
-  margin-block-start: 2.5rem;
+  margin-block-start: 1.75rem;
+}
+
+.main-pane .content-panel:first-child {
+  padding-block-end: 0.75rem;
+}
+
+.main-pane .content-panel + .content-panel {
+  border-top: 0;
+  padding-block-start: 0.5rem;
+}
+
+.sl-markdown-content > :first-child {
+  margin-block-start: 0;
 }
