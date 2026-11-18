@@ -170,23 +170,23 @@ header.header {
   }
 }
 
-starlight-toc nav > ul {
+courses-page-sections nav > ul {
   margin-block-start: 0.5rem;
   border-inline-start: 1px solid #2e2e32;
 }
 
-starlight-toc a {
+courses-page-sections a {
   position: relative;
   --pad-inline: 0.875rem;
   color: #a0a0a0;
 }
 
-starlight-toc a[aria-current='true'] {
+courses-page-sections a[aria-current='true'] {
   color: var(--sl-color-white);
   font-weight: 600;
 }
 
-starlight-toc a[aria-current='true']::before {
+courses-page-sections a[aria-current='true']::before {
   content: '';
   position: absolute;
   inset-block: 0;
@@ -216,12 +216,12 @@ starlight-toc a[aria-current='true']::before {
 
 @media (min-width: 72rem) {
   #starlight__on-this-page,
-  starlight-toc nav > ul {
+  courses-page-sections nav > ul {
     text-align: end;
     margin-inline-end: calc(0.375rem - var(--sl-nav-pad-x));
   }
 
-  starlight-toc a {
+  courses-page-sections a {
     padding-inline-end: 0;
   }
 }
@@ -536,16 +536,16 @@ starlight-toc a[aria-current='true']::before {
   }
 
   #starlight__on-this-page,
-  starlight-toc nav > ul {
+  courses-page-sections nav > ul {
     text-align: start;
     margin-inline-end: 0;
   }
 
-  starlight-toc nav > ul {
+  courses-page-sections nav > ul {
     border-inline-start: 0;
   }
 
-  starlight-toc a {
+  courses-page-sections a {
     padding: 0.625rem 0;
     border-bottom: 1px solid transparent;
     border-radius: 0;
@@ -554,30 +554,30 @@ starlight-toc a[aria-current='true']::before {
     line-height: 1.5;
   }
 
-  starlight-toc a[aria-current='true'] {
+  courses-page-sections a[aria-current='true'] {
     color: #e8e8e8;
     font-weight: 500;
     border-bottom-color: #5b8ef0;
   }
 
-  starlight-toc a[aria-current='true']::before {
+  courses-page-sections a[aria-current='true']::before {
     display: none;
   }
 
-  starlight-toc a:hover {
+  courses-page-sections a:hover {
     color: #e8e8e8;
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  starlight-toc a {
+  courses-page-sections a {
     transition: color 150ms ease, border-color 150ms ease;
   }
 }
 
-/* Allow even the final section to reach the navigation's reading position. */
+/* Leave a small end margin after the article. */
 .main-pane:has(.sl-markdown-content) {
-  padding-block-end: calc(100svh - var(--sl-nav-height) - 5rem);
+  padding-block-end: 2rem;
 }
 
 html,
@@ -608,4 +608,21 @@ site-search .dialog-frame {
 
 ::-webkit-scrollbar-button {
   display: none;
+}
+
+@media (max-width: 49.999rem) {
+  #starlight__sidebar .mobile-preferences {
+    align-items: center;
+    gap: 0.5rem;
+    padding-block: 0.75rem;
+  }
+
+  #starlight__sidebar .mobile-preferences > .social-icons {
+    padding-block: 0;
+  }
+
+  #starlight__sidebar .project-links a,
+  #starlight__sidebar .language-picker summary {
+    min-height: 2.75rem;
+  }
 }
