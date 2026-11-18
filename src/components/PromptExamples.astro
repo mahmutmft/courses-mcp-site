@@ -1,0 +1,53 @@
+---
+const prompts = [
+  'List my enrolled courses for the winter semester.',
+  'Find materials about recursion in this course.',
+  'Read this assignment and show its published due date.',
+];
+---
+
+<div class="prompt-examples">
+  {prompts.map((prompt) => (
+    <div class="prompt-row">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7 5 5-5 5m8 0h6" /></svg>
+      <p>{prompt}</p>
+      <button type="button" data-prompt={prompt} aria-label={'Copy prompt: ' + prompt}>
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2" /><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" /></svg>
+      </button>
+    </div>
+  ))}
+  <span class="copy-status" role="status"></span>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.prompt-examples button').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const status = button.closest('.prompt-examples')?.querySelector('[role="status"]');
+      try {
+        await navigator.clipboard.writeText(button.dataset.prompt ?? '');
+        if (status) status.textContent = 'Prompt copied. Paste it into your MCP client.';
+      } catch {
+        if (status) status.textContent = 'Could not copy. Select the prompt text to copy it manually.';
+      }
+    });
+  });
+</script>
+
+<style>
+  .prompt-examples { position: relative; display: grid; gap: 0.625rem; margin-block: 1rem; }
+  .prompt-row { display: flex; align-items: center; gap: 0.875rem; margin: 0; padding: 0.875rem 1rem; background: #141416; border: 1px solid #29292c; border-radius: 0.75rem; }
+  svg { width: 1.125rem; height: 1.125rem; flex: none; }
+  .prompt-row > svg { color: #b9bdff; }
+  .prompt-row p { flex: 1; margin: 0; font-size: 0.9375rem; line-height: 1.6; }
+  button { display: grid; place-items: center; flex: none; width: 2.25rem; height: 2.25rem; padding: 0; color: #aaa79f; background: transparent; border: 0; border-radius: 0.5rem; cursor: pointer; }
+  button:hover, button:focus-visible { color: #e8e5dd; background: #27272c; }
+  .copy-status { font-size: 0.8125rem; color: #bcb9b2; }
+  .copy-status:empty { display: none; }
+  @media (hover: hover) {
+    .prompt-row:hover { border-color: #494956; background: #19191c; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .prompt-row, button { transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease; }
+    button:active { transform: scale(0.95); }
+  }
+</style>

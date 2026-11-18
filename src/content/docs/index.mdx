@@ -4,6 +4,7 @@ description: Access your FINKI course materials through an MCP client.
 ---
 
 import ConnectionFlow from '../../components/ConnectionFlow.astro';
+import PromptExamples from '../../components/PromptExamples.astro';
 
 Courses MCP connects your MCP client to the courses you can access on FINKI Moodle. Ask a question in your chat, and the client can use the server to find course information and read supported materials.
 
@@ -30,11 +31,7 @@ The tools report source links and coverage information. When a page cannot be re
 
 Start by choosing a course, then ask a more specific question.
 
-> List my enrolled courses for the winter semester.
-
-> Find materials about recursion in this course.
-
-> Read this assignment and show its published due date.
+<PromptExamples />
 
 These are example prompts. The response depends on your enrollment, the material published in Moodle and the tools your client chooses to call. Course search covers section and activity text. Reading a PDF is a separate step.
 
