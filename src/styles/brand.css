@@ -579,3 +579,33 @@ starlight-toc a[aria-current='true']::before {
 .main-pane:has(.sl-markdown-content) {
   padding-block-end: calc(100svh - var(--sl-nav-height) - 5rem);
 }
+
+html,
+#starlight__sidebar,
+.right-sidebar,
+site-search .dialog-frame {
+  scrollbar-width: thin;
+  scrollbar-color: #3d3d40 #0e0e0e;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0e0e0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d3d40;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #606065;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
