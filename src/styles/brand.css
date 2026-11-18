@@ -519,3 +519,58 @@ starlight-toc a[aria-current='true']::before {
   border-radius: 2px;
   background: #5b8ef0;
 }
+
+@media (min-width: 72rem) {
+  .main-frame .right-sidebar-container {
+    flex-basis: 13rem;
+  }
+
+  #starlight__on-this-page {
+    margin-bottom: 1rem;
+    font-family: var(--sl-font);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+    color: #6b6b6b;
+  }
+
+  #starlight__on-this-page,
+  starlight-toc nav > ul {
+    text-align: start;
+    margin-inline-end: 0;
+  }
+
+  starlight-toc nav > ul {
+    border-inline-start: 0;
+  }
+
+  starlight-toc a {
+    padding: 0.625rem 0;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    color: #a0a0a0;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+
+  starlight-toc a[aria-current='true'] {
+    color: #e8e8e8;
+    font-weight: 500;
+    border-bottom-color: #5b8ef0;
+  }
+
+  starlight-toc a[aria-current='true']::before {
+    display: none;
+  }
+
+  starlight-toc a:hover {
+    color: #e8e8e8;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  starlight-toc a {
+    transition: color 150ms ease, border-color 150ms ease;
+  }
+}
