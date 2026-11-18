@@ -8,6 +8,7 @@ export default defineConfig({
     starlight({
       title: 'courses-mcp',
       components: {
+        PageTitle: './src/components/PageTitle.astro',
         Search: './src/components/Search.astro',
         SiteTitle: './src/components/SiteTitle.astro',
         ThemeProvider: './src/components/DarkThemeOnly.astro',
