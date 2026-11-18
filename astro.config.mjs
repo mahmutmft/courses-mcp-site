@@ -15,7 +15,7 @@ export default defineConfig({
         ThemeSelect: './src/components/DarkThemeOnly.astro',
       },
       sidebar: [
-        { label: 'Get started', items: [{ link: '/', label: 'Overview', attrs: { class: 'overview-link' } }] },
+        { label: 'Get started', items: [{ link: '/', label: 'What is Courses MCP?', attrs: { class: 'overview-link' } }] },
       ],
       customCss: ['@fontsource-variable/geist', './src/styles/brand.css'],
       logo: { src: './src/assets/courses-mcp-logo.webp' },

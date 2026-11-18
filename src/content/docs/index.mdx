@@ -1,0 +1,51 @@
+---
+title: What is Courses MCP?
+description: Access your FINKI course materials through an MCP client.
+---
+
+import ConnectionFlow from '../../components/ConnectionFlow.astro';
+
+Courses MCP connects your MCP client to the courses you can access on FINKI Moodle. Ask a question in your chat, and the client can use the server to find course information and read supported materials.
+
+It is built for FINKI students who want to work with course resources from an MCP-compatible application.
+
+## How it works
+
+MCP, the Model Context Protocol, lets a client application call tools provided by a server. Courses MCP provides tools for navigating your enrolled courses and retrieving information from Moodle.
+
+<ConnectionFlow />
+
+The server runs on your computer. Your MCP client starts it as a local process and communicates with it through standard input and output. On the first tool call, the server signs in through the faculty CAS login and keeps the session in memory until shutdown.
+
+## What you can do
+
+- **Find your courses.** List enrolled courses and filter supported course labels by academic year or semester.
+- **Explore course materials.** Browse sections and resource links, then read supported Moodle pages and text-based PDFs.
+- **Search a course.** Find matching headings, activity names, summaries and descriptions.
+- **Check published coursework information.** Read assignment descriptions and published dates, supported announcements and available lab schedule evidence.
+
+The tools report source links and coverage information. When a page cannot be read or only part of a resource is available, use those warnings to understand what the answer covers.
+
+## Questions to try
+
+Start by choosing a course, then ask a more specific question.
+
+> List my enrolled courses for the winter semester.
+
+> Find materials about recursion in this course.
+
+> Read this assignment and show its published due date.
+
+These are example prompts. The response depends on your enrollment, the material published in Moodle and the tools your client chooses to call. Course search covers section and activity text. Reading a PDF is a separate step.
+
+## Access and privacy
+
+You configure your faculty credentials locally. Enter them in the server configuration described in the project's setup instructions and keep them out of chats and shared files.
+
+Moodle access is read-only. Personal lab attendance and term preferences can be saved locally when you explicitly request a change. Course access follows your faculty account permissions.
+
+## Project status
+
+Courses MCP is under active development. This documentation is a pre-release introduction. Supported tools and setup instructions may evolve before the first stable release.
+
+For current installation instructions and tool details, visit the [Courses MCP repository](https://github.com/mahmutmft/courses-mcp). Release announcements will appear in the [Blog](/blog/).
