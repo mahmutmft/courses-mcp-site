@@ -346,11 +346,11 @@ starlight-toc a[aria-current='true']::before {
 }
 
 .sl-markdown-content :is(p, ul, ol, blockquote) {
-  margin-block: 0.875rem;
+  margin-block: 1rem;
 }
 
 .sl-markdown-content :is(h2, h3):not(:first-child) {
-  margin-block-start: 1.75rem;
+  margin-block-start: 2rem;
 }
 
 .main-pane .content-panel:first-child {
