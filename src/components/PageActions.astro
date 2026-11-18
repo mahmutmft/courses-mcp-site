@@ -1,0 +1,44 @@
+---
+interface Props { url: string }
+const { url } = Astro.props;
+---
+<div class="page-actions">
+  <button type="button" data-copy-url={url}>
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>
+    <span>Copy page</span>
+  </button>
+  <details>
+    <summary aria-label="More page actions"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 9 6 6 6-6"/></svg></summary>
+    <a href={url} target="_blank" rel="noopener">View as Markdown</a>
+  </details>
+  <span class="sr-only" role="status"></span>
+</div>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy-url]').forEach((button) => {
+    let timer: ReturnType<typeof setTimeout>;
+    button.addEventListener('click', async () => {
+      const status = button.parentElement?.querySelector('[role="status"]');
+      try {
+        const response = await fetch(button.dataset.copyUrl!);
+        if (!response.ok) throw new Error('Markdown unavailable');
+        await navigator.clipboard.writeText(await response.text());
+        button.querySelector('span')!.textContent = 'Copied';
+        if (status) status.textContent = 'Page copied as Markdown.';
+        clearTimeout(timer);
+        timer = setTimeout(() => { button.querySelector('span')!.textContent = 'Copy page'; }, 2000);
+      } catch {
+        if (status) status.textContent = 'Copy failed. Use View as Markdown to copy the text manually.';
+      }
+    });
+  });
+</script>
+<style>
+  .page-actions { position: relative; display: flex; flex: none; align-items: center; border: 1px solid #2a2a2a; border-radius: 6px; font-family: var(--sl-font); font-size: 13px; color: #a0a0a0; }
+  button, summary { display: flex; gap: 0.5rem; align-items: center; padding: 0.5rem 0.625rem; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+  button:hover, summary:hover { color: #e8e8e8; background: #1e1e1e; }
+  svg { width: 14px; height: 14px; }
+  details { border-inline-start: 1px solid #2a2a2a; }
+  summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  a { position: absolute; z-index: 5; inset-inline-end: 0; top: calc(100% + 6px); white-space: nowrap; padding: 0.75rem; border: 1px solid #2a2a2a; border-radius: 6px; background: #1a1a1a; color: #e8e8e8; text-decoration: none; }
+</style>
