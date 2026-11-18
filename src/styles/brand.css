@@ -203,7 +203,7 @@ starlight-toc a[aria-current='true']::before {
   }
 
   .main-frame .right-sidebar-container {
-    flex: 0 0 13.5rem;
+    flex: 0 0 12.5rem;
   }
 
   .main-frame .right-sidebar {
@@ -364,4 +364,10 @@ starlight-toc a[aria-current='true']::before {
 
 .sl-markdown-content > :first-child {
   margin-block-start: 0;
+}
+@media (min-width: 50rem) {
+  :root {
+    --sl-sidebar-width: 16rem;
+    --sl-content-width: 52rem;
+  }
 }
