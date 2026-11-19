@@ -21,6 +21,14 @@ export default defineConfig({
       },
       sidebar: [
         { label: 'Get started', translations: { mk: 'Започнете тука' }, items: [{ slug: '', label: 'What is Courses MCP?', translations: { mk: 'Што е Courses MCP?' }, attrs: { class: 'overview-link' } }] },
+        {
+          label: 'Reference',
+          translations: { mk: 'Референца' },
+          items: [
+            { slug: 'reference/tools', label: 'Tools', translations: { mk: 'Алатки' } },
+            { slug: 'reference/tools/list-courses', label: 'list_courses' },
+          ],
+        },
       ],
       customCss: ['@fontsource-variable/geist', './src/styles/brand.css'],
       logo: { src: './src/assets/courses-mcp-logo.webp' },
