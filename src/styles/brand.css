@@ -686,15 +686,15 @@ site-search .dialog-frame {
 }
 
 #starlight__sidebar .top-level ul,
-#starlight__sidebar .top-level ul details > ul {
+#starlight__sidebar .top-level details > ul {
   border-inline-start: 0;
 }
 
-#starlight__sidebar .top-level ul ul ul > li {
+#starlight__sidebar .top-level ul > li {
   position: relative;
 }
 
-#starlight__sidebar .top-level ul ul ul > li::before {
+#starlight__sidebar .top-level ul > li::before {
   content: '';
   position: absolute;
   inset-inline-start: -0.625rem;
