@@ -4,7 +4,7 @@ const { toc } = Astro.locals.starlightRoute;
 {toc && (
   <courses-page-sections>
     <nav aria-labelledby="starlight__on-this-page">
-      <h2 id="starlight__on-this-page">On this page</h2>
+      <h2 id="starlight__on-this-page">{Astro.locals.t('tableOfContents.onThisPage')}</h2>
       <ul>
         {toc.items.map((item) => <li><a href={'#' + item.slug}>{item.text}</a></li>)}
       </ul>

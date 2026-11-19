@@ -1,33 +1,36 @@
 ---
 interface Props { url: string }
 const { url } = Astro.props;
+const isMk = Astro.locals.starlightRoute.locale === 'mk';
+const labels = isMk ? { copy: 'Копирај страница', copied: 'Копирано', success: 'Страницата е копирана како Markdown.', failure: 'Копирањето не успеа. Отворете ја Markdown верзијата за рачно копирање.' } : { copy: 'Copy page', copied: 'Copied', success: 'Page copied as Markdown.', failure: 'Copy failed. Use View as Markdown to copy the text manually.' };
 ---
 <div class="page-actions">
-  <button type="button" data-copy-url={url}>
+  <button type="button" data-copy-url={url} data-labels={JSON.stringify(labels)}>
     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>
-    <span>Copy page</span>
+    <span>{labels.copy}</span>
   </button>
   <details>
-    <summary aria-label="More page actions"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 9 6 6 6-6"/></svg></summary>
-    <a href={url} target="_blank" rel="noopener">View as Markdown</a>
+    <summary aria-label={isMk ? 'Повеќе дејства за страницата' : 'More page actions'}><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 9 6 6 6-6"/></svg></summary>
+    <a href={url} target="_blank" rel="noopener">{isMk ? 'Прикажи како Markdown' : 'View as Markdown'}</a>
   </details>
   <span class="sr-only" role="status"></span>
 </div>
 <script>
   document.querySelectorAll<HTMLButtonElement>('[data-copy-url]').forEach((button) => {
     let timer: ReturnType<typeof setTimeout>;
+    const labels = JSON.parse(button.dataset.labels!);
     button.addEventListener('click', async () => {
       const status = button.parentElement?.querySelector('[role="status"]');
       try {
         const response = await fetch(button.dataset.copyUrl!);
         if (!response.ok) throw new Error('Markdown unavailable');
         await navigator.clipboard.writeText(await response.text());
-        button.querySelector('span')!.textContent = 'Copied';
-        if (status) status.textContent = 'Page copied as Markdown.';
+        button.querySelector('span')!.textContent = labels.copied;
+        if (status) status.textContent = labels.success;
         clearTimeout(timer);
-        timer = setTimeout(() => { button.querySelector('span')!.textContent = 'Copy page'; }, 2000);
+        timer = setTimeout(() => { button.querySelector('span')!.textContent = labels.copy; }, 2000);
       } catch {
-        if (status) status.textContent = 'Copy failed. Use View as Markdown to copy the text manually.';
+        if (status) status.textContent = labels.failure;
       }
     });
   });

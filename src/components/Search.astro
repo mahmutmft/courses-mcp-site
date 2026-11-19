@@ -1,13 +1,14 @@
 ---
 import Search from '@astrojs/starlight/components/Search.astro';
-const base = import.meta.env.BASE_URL;
+const isMk = Astro.locals.starlightRoute.locale === 'mk';
+const base = import.meta.env.BASE_URL + (isMk ? 'mk/' : '');
 ---
 
 <div class="soft-search">
   <Search />
-  <nav class="search-shortcuts" aria-label="Quick navigation">
-    <a href={base}>What is Courses MCP? <span aria-hidden="true">↗</span></a>
-    <a href={base + 'blog/'}>Release notes <span aria-hidden="true">↗</span></a>
+  <nav class="search-shortcuts" aria-label={isMk ? 'Брза навигација' : 'Quick navigation'}>
+    <a href={base}>{isMk ? 'Што е Courses MCP?' : 'What is Courses MCP?'} <span aria-hidden="true">↗</span></a>
+    <a href={base + 'blog/'}>{isMk ? 'Белешки за изданијата' : 'Release notes'} <span aria-hidden="true">↗</span></a>
   </nav>
 </div>
 
