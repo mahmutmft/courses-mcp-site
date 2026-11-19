@@ -7,6 +7,8 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'courses-mcp',
+      defaultLocale: 'root',
+      locales: { root: { label: 'English', lang: 'en' }, mk: { label: 'Македонски', lang: 'mk' } },
       components: {
         TableOfContents: './src/components/TableOfContents.astro',
         LanguageSelect: './src/components/LanguageSelect.astro',
@@ -18,7 +20,7 @@ export default defineConfig({
         ThemeSelect: './src/components/DarkThemeOnly.astro',
       },
       sidebar: [
-        { label: 'Get started', items: [{ link: '/', label: 'What is Courses MCP?', attrs: { class: 'overview-link' } }] },
+        { label: 'Get started', translations: { mk: 'Започнете тука' }, items: [{ slug: '', label: 'What is Courses MCP?', translations: { mk: 'Што е Courses MCP?' }, attrs: { class: 'overview-link' } }] },
       ],
       customCss: ['@fontsource-variable/geist', './src/styles/brand.css'],
       logo: { src: './src/assets/courses-mcp-logo.webp' },

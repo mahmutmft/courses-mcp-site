@@ -4,7 +4,7 @@ import SiteTitle from '@astrojs/starlight/components/SiteTitle.astro';
 
 <div class="site-identity">
   <SiteTitle />
-  <span class="version">Pre-release</span>
+  <span class="version">{Astro.locals.starlightRoute.locale === 'mk' ? 'Прелиминарно' : 'Pre-release'}</span>
 </div>
 
 <style>
