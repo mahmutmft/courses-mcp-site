@@ -37,6 +37,7 @@ export default defineConfig({
                   collapsed: true,
                   items: [
                     { slug: 'reference/tools/list-courses', label: 'list_courses' },
+                    { slug: 'reference/tools/get-course', label: 'get_course' },
                   ],
                 },
               ],
