@@ -30,14 +30,14 @@ export default defineConfig({
               translations: { mk: 'Алатки' },
               collapsed: true,
               items: [
-                { slug: 'reference/tools', label: 'Overview', translations: { mk: 'Преглед' } },
+                { slug: 'reference/tools', label: 'Overview', translations: { mk: 'Преглед' }, attrs: { class: 'nav-icon nav-grid' } },
                 {
                   label: 'Courses and search',
                   translations: { mk: 'Предмети и пребарување' },
                   collapsed: true,
                   items: [
-                    { slug: 'reference/tools/list-courses', label: 'list_courses' },
-                    { slug: 'reference/tools/get-course', label: 'get_course' },
+                    { slug: 'reference/tools/list-courses', label: 'list_courses', attrs: { class: 'nav-icon nav-list' } },
+                    { slug: 'reference/tools/get-course', label: 'get_course', attrs: { class: 'nav-icon nav-book' } },
                   ],
                 },
               ],
