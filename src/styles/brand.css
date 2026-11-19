@@ -682,7 +682,7 @@ site-search .dialog-frame {
 #starlight__sidebar .top-level ul details > ul {
   margin-inline-start: 0.5rem;
   padding-inline-start: 0.625rem;
-  border-inline-start: 1px solid #2a2a2a;
+  border-inline-start: 0;
 }
 
 #starlight__sidebar .top-level ul,
