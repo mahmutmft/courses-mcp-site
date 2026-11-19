@@ -22,6 +22,7 @@ export const GET: APIRoute = ({ props }) => {
     .replace(/<li>\{("(?:[^"\\]|\\.)*")\}<\/li>/g, (_, value) => '- ' + JSON.parse(value))
     .replace(/<li>([^<{]*)<\/li>/g, (_, text) => '- ' + text)
     .replace(/<\/?ul[^>]*>/g, '')
+    .replace(/<\/?div[^>]*>/g, '')
     .replace(/^\{("(?:[^"\\]|\\.)*")\}$/gm, (_, value) => JSON.parse(value))
     .trim();
   return new Response('# ' + title + '\n\n' + markdown + '\n', {
