@@ -1,0 +1,126 @@
+---
+title: Tools
+description: Explore the tools provided by Courses MCP.
+---
+
+Find a tool for the task you want to complete. Your MCP client calls these tools during your conversation.
+
+The **list_courses** reference is the first complete guide. The other tools currently have short summaries.
+
+## Courses and search
+
+<div className="tool-catalog">
+
+- [`list_courses`](/reference/tools/list-courses/)
+
+  List enrolled courses, with optional year and semester filters.
+
+- `get_course`
+
+  Browse sections and discovered resource links.
+
+- `search_course`
+
+  Search section and activity text in one course.
+
+- `search_courses`
+
+  Search across explicitly selected courses and resources.
+
+</div>
+
+## Materials
+
+<div className="tool-catalog">
+
+- `read_resource`
+
+  Read supported Moodle pages and text-based PDFs.
+
+- `get_folder`
+
+  Discover files in a course folder.
+
+- `read_folder_file`
+
+  Read a discovered PDF from a folder.
+
+</div>
+
+## Coursework and announcements
+
+<div className="tool-catalog">
+
+- `get_assignment`
+
+  Read an assignment and its published dates.
+
+- `get_quiz`
+
+  Read quiz information and published dates.
+
+- `get_coursework_deadlines`
+
+  Find published coursework dates across selected courses.
+
+- `get_announcements`
+
+  Read supported course news posts.
+
+</div>
+
+## Labs and preferences
+
+<div className="tool-catalog">
+
+- `get_lab_timetable`
+
+  Read published timetable evidence.
+
+- `get_lab_schedule`
+
+  Find dated lab candidates for a course and week.
+
+- `get_weekly_labs`
+
+  Look up labs for an explicitly selected week.
+
+- `get_choice_selection`
+
+  Read your saved Moodle poll selection.
+
+- `get_lab_preference`
+
+  Read your local attendance preference.
+
+- `set_lab_preference`
+
+  Save or reset a local attendance preference.
+
+- `get_lab_term_preference`
+
+  Read your local group and term preference.
+
+- `set_lab_term_preference`
+
+  Save or reset local group and term preferences.
+
+</div>
+
+## Local cache
+
+<div className="tool-catalog">
+
+- `get_course_cache`
+
+  Inspect local course cache information.
+
+- `clear_course_cache`
+
+  Remove the selected course's local cache.
+
+</div>
+
+## Access and results
+
+Moodle access is read-only. Preference setters and cache clearing change local data. Check source links, coverage and warnings before relying on a result.
