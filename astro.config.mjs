@@ -25,8 +25,22 @@ export default defineConfig({
           label: 'Reference',
           translations: { mk: 'Референца' },
           items: [
-            { slug: 'reference/tools', label: 'Tools', translations: { mk: 'Алатки' } },
-            { slug: 'reference/tools/list-courses', label: 'list_courses' },
+            {
+              label: 'Tools',
+              translations: { mk: 'Алатки' },
+              collapsed: true,
+              items: [
+                { slug: 'reference/tools', label: 'Overview', translations: { mk: 'Преглед' } },
+                {
+                  label: 'Courses and search',
+                  translations: { mk: 'Предмети и пребарување' },
+                  collapsed: true,
+                  items: [
+                    { slug: 'reference/tools/list-courses', label: 'list_courses' },
+                  ],
+                },
+              ],
+            },
           ],
         },
       ],

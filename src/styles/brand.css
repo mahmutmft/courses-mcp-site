@@ -671,3 +671,16 @@ site-search .dialog-frame {
 @media (max-width: 42rem) {
   .tool-catalog ul { grid-template-columns: 1fr; }
 }
+
+#starlight__sidebar .top-level ul summary .large {
+  color: #a0a0a0;
+  font-size: 0.8125rem;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+#starlight__sidebar .top-level ul details > ul {
+  margin-inline-start: 0.5rem;
+  padding-inline-start: 0.625rem;
+  border-inline-start: 1px solid #2a2a2a;
+}
