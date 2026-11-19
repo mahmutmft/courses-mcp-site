@@ -785,3 +785,9 @@ site-search .dialog-frame {
   width: 0.875rem;
   height: 0.875rem;
 }
+
+#starlight__sidebar .top-level details > ul,
+#starlight__sidebar .top-level ul details > ul {
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+}
