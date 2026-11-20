@@ -7,6 +7,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'courses-mcp',
+      favicon: '/favicon.png',
       defaultLocale: 'root',
       locales: { root: { label: 'English', lang: 'en' }, mk: { label: 'Македонски', lang: 'mk' } },
       components: {
