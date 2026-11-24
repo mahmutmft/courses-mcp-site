@@ -736,6 +736,7 @@ site-search .dialog-frame {
 .nav-grid { --nav-icon: url('../assets/icons/layout-grid.svg'); }
 .nav-list { --nav-icon: url('../assets/icons/list.svg'); }
 .nav-book { --nav-icon: url('../assets/icons/book-open.svg'); }
+.nav-search { --nav-icon: url('../assets/icons/search.svg'); }
 
 #starlight__sidebar .top-level ul summary .group-label {
   display: flex;
