@@ -40,6 +40,7 @@ export default defineConfig({
                     { slug: 'reference/tools/list-courses', label: 'list_courses', attrs: { class: 'nav-icon nav-list' } },
                     { slug: 'reference/tools/get-course', label: 'get_course', attrs: { class: 'nav-icon nav-book' } },
                     { slug: 'reference/tools/search-course', label: 'search_course', attrs: { class: 'nav-icon nav-search' } },
+                    { slug: 'reference/tools/search-courses', label: 'search_courses', attrs: { class: 'nav-icon nav-search' } },
                   ],
                 },
               ],
