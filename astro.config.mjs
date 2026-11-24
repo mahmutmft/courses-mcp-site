@@ -23,15 +23,10 @@ export default defineConfig({
       sidebar: [
         { label: 'Get started', translations: { mk: 'Започнете тука' }, items: [{ slug: '', label: 'What is Courses MCP?', translations: { mk: 'Што е Courses MCP?' }, attrs: { class: 'overview-link' } }] },
         {
-          label: 'Reference',
-          translations: { mk: 'Референца' },
+          label: 'Tools',
+          translations: { mk: 'Алатки' },
           items: [
-            {
-              label: 'Tools',
-              translations: { mk: 'Алатки' },
-              collapsed: true,
-              items: [
-                { slug: 'reference/tools', label: 'Overview', translations: { mk: 'Преглед' }, attrs: { class: 'nav-icon nav-grid' } },
+                { slug: 'reference/tools', label: 'All tools', translations: { mk: 'Сите алатки' }, attrs: { class: 'nav-icon nav-grid' } },
                 {
                   label: 'Courses and search',
                   translations: { mk: 'Предмети и пребарување' },
@@ -51,12 +46,10 @@ export default defineConfig({
                     { slug: 'reference/tools/read-resource', label: 'read_resource', attrs: { class: 'nav-icon nav-book' } },
                   ],
                 },
-              ],
-            },
           ],
         },
       ],
-      customCss: ['@fontsource-variable/geist', './src/styles/brand.css'],
+      customCss: ['@fontsource-variable/geist', './src/styles/brand.css', './src/styles/sidebar.css'],
       logo: { src: './src/assets/courses-mcp-logo.webp' },
     }),
   ],
