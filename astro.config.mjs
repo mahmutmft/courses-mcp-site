@@ -43,6 +43,14 @@ export default defineConfig({
                     { slug: 'reference/tools/search-courses', label: 'search_courses', attrs: { class: 'nav-icon nav-search' } },
                   ],
                 },
+                {
+                  label: 'Materials',
+                  translations: { mk: 'Материјали' },
+                  collapsed: true,
+                  items: [
+                    { slug: 'reference/tools/read-resource', label: 'read_resource', attrs: { class: 'nav-icon nav-book' } },
+                  ],
+                },
               ],
             },
           ],
