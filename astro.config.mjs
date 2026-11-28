@@ -49,7 +49,7 @@ export default defineConfig({
           ],
         },
       ],
-      customCss: ['@fontsource-variable/geist', './src/styles/brand.css', './src/styles/sidebar.css'],
+      customCss: ['@fontsource-variable/geist', './src/styles/brand.css', './src/styles/sidebar.css', './src/styles/tool-catalog.css'],
       logo: { src: './src/assets/courses-mcp-logo.webp' },
     }),
   ],

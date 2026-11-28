@@ -1,0 +1,111 @@
+.tool-catalog {
+  --catalog-icon: url('../assets/icons/search.svg');
+  --summary-label: 'Summary only';
+}
+.tool-catalog[data-locale='mk'] { --summary-label: 'Краток преглед'; }
+.catalog-materials { --catalog-icon: url('../assets/icons/book-open.svg'); }
+.catalog-coursework { --catalog-icon: url('../assets/icons/list.svg'); }
+.catalog-labs { --catalog-icon: url('../assets/icons/calendar.svg'); }
+.catalog-cache { --catalog-icon: url('../assets/icons/database.svg'); }
+
+.tool-catalog ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-block: 1px solid #2a2a2a;
+}
+.sl-markdown-content .tool-catalog li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr) auto;
+  column-gap: 0.875rem;
+  row-gap: 0.25rem;
+  margin: 0;
+  padding: 1rem 0.75rem;
+  isolation: isolate;
+  transition: background-color 160ms ease;
+}
+.tool-catalog li + li { border-block-start: 1px solid #202020; }
+.tool-catalog li::before {
+  content: '';
+  grid-column: 1;
+  grid-row: 1 / 3;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 0.125rem;
+  background: #858585;
+  mask: var(--catalog-icon) center / contain no-repeat;
+}
+.tool-catalog li > p {
+  grid-column: 2;
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #a0a0a0;
+}
+.tool-catalog li > p:first-child { grid-row: 1; }
+.tool-catalog li > p + p { grid-row: 2; margin-top: 0; }
+.tool-catalog code {
+  padding: 0;
+  background: transparent;
+  color: #e8e8e8;
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}
+.tool-catalog a { color: #e8e8e8; text-decoration: none; }
+.tool-catalog a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 6px;
+}
+.tool-catalog li:has(a)::after {
+  content: '';
+  grid-column: 3;
+  grid-row: 1 / 3;
+  align-self: center;
+  width: 1rem;
+  height: 1rem;
+  background: #858585;
+  mask: url('../assets/icons/arrow-up-right.svg') center / contain no-repeat;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+.tool-catalog li:not(:has(a))::after {
+  content: var(--summary-label);
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  color: #858585;
+  font-size: 0.6875rem;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.tool-catalog li:has(a):hover,
+.tool-catalog li:focus-within { background: #15171b; }
+.tool-catalog li:has(a):hover::before { background: #5b8ef0; }
+.tool-catalog li:has(a):hover::after { transform: translate(2px, -2px); background: #5b8ef0; }
+.tool-catalog a:focus-visible { outline: none; }
+.tool-catalog a:focus-visible::after { outline: 2px solid #5b8ef0; outline-offset: -2px; }
+
+.sl-heading-wrapper:has(+ .tool-catalog) h2 { display: flex; align-items: center; gap: 0.75rem; }
+.sl-heading-wrapper:has(+ .tool-catalog) h2::before {
+  content: '';
+  flex: 0 0 1.125rem;
+  height: 1.125rem;
+  background: #a0a0a0;
+  mask: url('../assets/icons/search.svg') center / contain no-repeat;
+}
+.sl-heading-wrapper:has(+ .catalog-materials) h2::before { mask-image: url('../assets/icons/book-open.svg'); }
+.sl-heading-wrapper:has(+ .catalog-coursework) h2::before { mask-image: url('../assets/icons/list.svg'); }
+.sl-heading-wrapper:has(+ .catalog-labs) h2::before { mask-image: url('../assets/icons/calendar.svg'); }
+.sl-heading-wrapper:has(+ .catalog-cache) h2::before { mask-image: url('../assets/icons/database.svg'); }
+
+@media (max-width: 38rem) {
+  .sl-markdown-content .tool-catalog li { column-gap: 0.625rem; padding-inline: 0.25rem; }
+  .tool-catalog li:not(:has(a))::after { grid-column: 2; grid-row: 3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sl-markdown-content .tool-catalog li,
+  .tool-catalog li:has(a)::after { transition: none; }
+}
